@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.basic-layout{
+    max-width: 75%;
+    margin:auto;
+    height: 100%;
+    margin-top:10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
+p{
+    color:rgb(176, 179, 179);
+    text-align: center;
+}
+button{
+    background-color: white;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 10px;
+    width:50% ;
+    height: 60px;
+    margin-top: 20px;
+    text-align: start;
+    cursor: pointer;
+    align-items: center;
+    
+}
+
+button:hover{
+   
+    box-shadow: 4px 4px 5px rgba(72, 72, 72, 0.1);
+    
+}
