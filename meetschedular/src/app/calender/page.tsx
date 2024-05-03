@@ -4,12 +4,17 @@ import { Card,Calendar, theme } from 'antd';
 import type { CalendarProps } from 'antd';
 import type { Dayjs } from 'dayjs';
 import "../style/calender.css";
+import { useRouter } from "next/navigation"
 
 import { SlArrowLeftCircle } from "react-icons/sl";
 import { FaRegClock } from "react-icons/fa";
 import { BsCameraVideo } from "react-icons/bs";
 
-export default function calender() {
+export default function Calender() {
+  const route = useRouter()
+  function redirectingathome () {
+   route.push("/")
+  }
 
     const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
         console.log(value.format('YYYY-MM-DD'), mode);
@@ -27,7 +32,7 @@ export default function calender() {
         <>
          <Card size="small" style={{ height: '600px' , margin:"auto" }} className="basic-layout">
            <div className="main-content">
-            <SlArrowLeftCircle style={{fontSize:"40px" , color:"blue" , cursor:"pointer" }}/> 
+            <SlArrowLeftCircle onClick={redirectingathome} style={{fontSize:"40px" , color:"blue" , cursor:"pointer" }}/> 
             <div className='content-part'>
                
                 <p style={{fontSize:"15px" , fontWeight:300}}>Harshit Shrivastava</p>

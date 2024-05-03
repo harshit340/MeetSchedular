@@ -25,3 +25,10 @@
     position: absolute;
     top:20%;
 }
+
+.user-info{
+    padding-right: 30px;
+    border-left:1px solid rgb(206, 204, 204);
+    padding: 10px;
+    justify-content: center;
+}
