@@ -7,21 +7,27 @@ import { BsCameraVideo } from "react-icons/bs";
 import { TfiWorld } from "react-icons/tfi";
 import "../style/schedule.css";
 
+import { useRouter } from 'next/navigation';
 
-export default function schedule(){
+
+export default function Schedule(){
+  const router = useRouter()
+  function redirectingathome () {
+    router.push("/page2")
+   }
     return (
         <>
         <Card size="small" style={{ height: '600px' , margin:"auto" }} className="basic-layout">
           <div className="main-content">
-           <SlArrowLeftCircle style={{fontSize:"40px" , color:"blue" , cursor:"pointer" }}/> 
+          <SlArrowLeftCircle onClick={redirectingathome} style={{fontSize:"40px" , color:"blue" , cursor:"pointer" }}/> 
            <div className='content-part'>
               
-               <p style={{fontSize:"15px" , fontWeight:300}}>Harshit Shrivastava</p>
-               <p style={{fontSize:"28px" , fontWeight:500 }}>30 Minute Meeting</p>
-               <p style={{fontSize:"12px" , fontWeight:300 }}><FaRegClock style={{fontSize:"12px" , fontWeight:300}}/>  30 min</p>
-               <p style={{fontSize:"14px" , fontWeight:300}}><BsCameraVideo /> Web conferencing details provide upon confirmation</p>
-               <p style={{fontSize:"15px" , fontWeight:300}}><BsCameraVideo /> time</p>
-               <p style={{fontSize:"15px" , fontWeight:300}}><TfiWorld /> Indian Standard Time (4:55)</p>
+               <h5 style={{fontSize:"15px" , fontWeight:300}}>Harshit Shrivastava</h5>
+               <h5 style={{fontSize:"28px" , fontWeight:500 }}>30 Minute Meeting</h5>
+               <h5 style={{fontSize:"12px" , fontWeight:300 }}><FaRegClock style={{fontSize:"12px" , fontWeight:300}}/>  30 min</h5>
+               <h5 style={{fontSize:"14px" , fontWeight:300}}><BsCameraVideo /> Web conferencing details provide upon confirmation</h5>
+               <h5 style={{fontSize:"15px" , fontWeight:300}}><BsCameraVideo /> time</h5>
+               <h5 style={{fontSize:"15px" , fontWeight:300}}><TfiWorld /> Indian Standard Time (4:55)</h5>
                </div>
 
 
@@ -43,10 +49,10 @@ export default function schedule(){
             </div>
            <Button type="dashed">Add Guests</Button>
             <div style={{padding:"10px"}}>
-                <p>Please share anything that will help prepare for our meeting</p>    
+                <h5>Please share anything that will help prepare for our meeting</h5>    
              <Input.TextArea />
             </div>
-            <p style={{padding:"10px"}}>By Proceeding. you confirm that you have read and agreed to <span style={{color:'blue'}}>Terms of Use</span> and <span style={{color:'blue'}}>Privacy Notice</span></p> 
+            <h5 style={{padding:"10px"}}>By Proceeding. you confirm that you have read and agreed to <span style={{color:'blue'}}>Terms of Use</span> and <span style={{color:'blue'}}>Privacy Notice</span></h5> 
             <Button type="primary" >Schedule Event</Button>
             </Form>
            </div>
