@@ -34,16 +34,16 @@ function handleSubmit() {
 
 
   return (
-    <div style={{}}>
+    
     <div style={{padding:"20px"}}>
    <h4 style={{margin:"20px" , paddingLeft:"23px"}}>{selectedDate ? selectedDate.format('YYYY-MM-DD') : 'No date selected'}</h4>
    <div style={{ display:"flex" , flexDirection:"column" ,maxHeight:'430px' , overflow:"auto"}} >
                     {timeSlots?.map((time,index)=>(
-                        <Button onClick={handleSubmit} key={index} style={{margin:"10px" , padding:"30px 40px 30px 40px" ,justifyContent:"center" }}>{time}</Button>
+                        <Button  onClick={handleSubmit} key={index} style={{margin:"10px" , padding:"30px 40px 30px 40px"  }}>{time}</Button>
                     ))}
                 </div>
 
     </div>
-    </div>
+   
   )
 }
