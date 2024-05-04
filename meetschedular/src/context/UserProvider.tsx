@@ -10,9 +10,9 @@ const UserContextProvider = ({
     const [user,setuser] = React.useState();
     const value = { user, setuser: setuser };
     return (
-        <UserContextProvider value={value}>
+        <UserContext.Provider value={value}>
             {children}
-        </UserContextProvider>
+        </UserContext.Provider>
     )
 }
 

@@ -12,20 +12,17 @@ export default function Home(){
 
   const router = useRouter();
   
-  const [duration,setDuration]=React.useState(" ");
+  const [duration,setDuration]=React.useState("");
 
   const {setuser} =  useContext(UserContext)
 
-  const handleSubmit = () => {
-    setuser({duration})
-  }
-  
- 
- 
-
-  function redirecting() {
-    router.push("/page2")
-  }
+  React.useEffect(() => {
+    if (duration) {
+      setuser({ duration });
+      
+      router.push("/page2");
+    }
+  }, [duration]); 
    
     return (
         <>
@@ -33,8 +30,8 @@ export default function Home(){
            <h2 style={{textAlign:"center"}}>Harshit Shrivastava</h2>
            <p>Welcome to my scheduling page . Please follow the instruction to add an event to my calender</p>
            <div className="button-components" style={{display:"Flex"}}>
-           <button style={{display:"Flex"}} onClick={() => { redirecting();setDuration("30");handleSubmit()}}><GoDotFill style={{fontSize:30, color:"blueviolet"}} /><h2>30 Minute Meeting</h2><TbArrowBadgeRight style={{fontSize:20, color:"black"}} /></button>
-           <button style={{display:"Flex"}} onClick={() => { redirecting();setDuration("60") ;handleSubmit()}}><GoDotFill style={{fontSize:30 , color:"blueviolet"}}/><h2>60 Minute Meeting</h2><TbArrowBadgeRight style={{fontSize:20, color:"black"}}  /></button>
+           <button style={{display:"Flex"}} onClick={() => setDuration("30")}><GoDotFill style={{fontSize:30, color:"blueviolet"}} /><h2>30 Minute Meeting</h2><TbArrowBadgeRight style={{fontSize:20, color:"black"}} /></button>
+           <button style={{display:"Flex"}} onClick={() => setDuration("60")}><GoDotFill style={{fontSize:30 , color:"blueviolet"}}/><h2>60 Minute Meeting</h2><TbArrowBadgeRight style={{fontSize:20, color:"black"}}  /></button>
            </div>
         </Card>
         </>
