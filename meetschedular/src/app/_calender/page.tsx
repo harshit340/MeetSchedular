@@ -5,7 +5,7 @@ import type { CalendarProps } from 'antd';
 import type { Dayjs } from 'dayjs';
 import "../style/callender.css";
 import Timer from '../_timer/page';
-import { useRouter } from "next/navigation"
+
 
 type CalenderProps = {
   onDateSelected?: (date: Dayjs) => void; 
@@ -57,7 +57,7 @@ export default function Calender({ onDateSelected }: CalenderProps) {
            :<>
          <div className='calender-part'>
             <h2 style={{padding:"20px"}}>Select date and time</h2>
-            <div style={wrapperStyle}><Calendar fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/></div>
+            <div style={wrapperStyle} className='calender-style'><Calendar fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/></div>
             <div style={{padding:"20px"}}>
                 <h3>Time Zone</h3>
                 <h5 style={{fontSize:"14px" , fontWeight:300}}>Indian Standard Time (4:55)</h5>

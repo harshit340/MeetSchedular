@@ -27,8 +27,9 @@ export default function Page2() {
     return (
         <>
          <Card size="small" style={{ height: '600px' , margin:"auto" }} className="basic-layout">
+          <SlArrowLeftCircle onClick={redirectingathome} style={{fontSize:"40px" , color:"blue" , cursor:"pointer" }}/> 
            <div className="main-content">
-            <SlArrowLeftCircle onClick={redirectingathome} style={{fontSize:"40px" , color:"blue" , cursor:"pointer" }}/> 
+            
             <div className='content-part'>
                
                 <h5 style={{fontSize:"15px" , fontWeight:300}}>Harshit Shrivastava</h5>
@@ -37,7 +38,7 @@ export default function Page2() {
                 <h5 style={{fontSize:"14px" , fontWeight:300}}><BsCameraVideo />  Web conferencing details provide upon confirmation</h5>
             </div>
             <div className='other-part'>
-            <Calender onDateSelected={handleDateSelected}/>
+            <Calender  onDateSelected={handleDateSelected}/>
 
 
            </div>

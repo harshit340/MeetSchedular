@@ -7,10 +7,15 @@
 .basic-layout{
     max-width: 75%;
     margin:auto;
-    height: 100%;
     margin-top:10px;
     border-radius: 10px;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
+@media (max-width:1180px){
+    .basic-layout{
+        max-width: 45%;
+        
+    }
 }
 
 .main-content{
@@ -19,12 +24,17 @@
     padding-right: 10px;
 }
 
-.calender-part{
-    border-left:1px solid rgb(206, 204, 204);
-    padding:10px;
+@media (max-width:1180px){
+    .main-content{
+        flex-direction: column;
+        padding-top:10px;
+    }
+    .other-part{
+        padding-top:20px;
+    }
 }
 
+
 .content-part{
-    position: absolute;
-    top:20%;
+    margin-top:10%;
 }

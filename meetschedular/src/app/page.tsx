@@ -6,6 +6,7 @@ import { GoDotFill } from "react-icons/go";
 import { TbArrowBadgeRight} from "react-icons/tb";
 import { useRouter } from "next/navigation"
 import UserContext from '@/context/UserContext';
+import Link from 'next/link';
 
 
 export default function Home(){
@@ -26,12 +27,14 @@ export default function Home(){
    
     return (
         <>
-        <Card size="small" style={{ height: '500px' }} className="basic-layout">
-           <h2 style={{textAlign:"center"}}>Harshit Shrivastava</h2>
+        <Card size="small" className='card-layout'>
+          <div>
+           <h2 >Harshit Shrivastava</h2>
            <p>Welcome to my scheduling page . Please follow the instruction to add an event to my calender</p>
-           <div className="button-components" style={{display:"Flex"}}>
-           <button style={{display:"Flex"}} onClick={() => setDuration("30")}><GoDotFill style={{fontSize:30, color:"blueviolet"}} /><h2>30 Minute Meeting</h2><TbArrowBadgeRight style={{fontSize:20, color:"black"}} /></button>
-           <button style={{display:"Flex"}} onClick={() => setDuration("60")}><GoDotFill style={{fontSize:30 , color:"blueviolet"}}/><h2>60 Minute Meeting</h2><TbArrowBadgeRight style={{fontSize:20, color:"black"}}  /></button>
+           </div>
+           <div className='button-container' >
+           <button style={{display:"Flex"}} onClick={() => setDuration("30")}><GoDotFill style={{fontSize:30, color:"blueviolet"}} /><h2><Link style={{textDecoration:"none", color:'black'}} href="/page2">30 Minute Meeting</Link></h2><TbArrowBadgeRight style={{fontSize:20, color:"black"}} /></button>
+           <button style={{display:"Flex"}} onClick={() => setDuration("60")}><GoDotFill style={{fontSize:30 , color:"blueviolet"}}/><h2><Link href="/page2" style={{textDecoration: 'none' ,color:'black'}}>60 Minute Meeting</Link></h2><TbArrowBadgeRight style={{fontSize:20, color:"black"}}  /></button>
            </div>
         </Card>
         </>
