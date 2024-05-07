@@ -2,6 +2,7 @@ import { Button } from 'antd';
 import React from 'react';
 import { useRouter } from "next/navigation"
 import { MdVisibility } from 'react-icons/md';
+import "../style/timer.css"
 
 export default function Timer({selectedDate}) {
   const [timeSlots,setTimeSlots]=React.useState([]);
@@ -35,11 +36,11 @@ function handleSubmit() {
 
   return (
     
-    <div style={{padding:"20px"}}>
-   <h4 style={{margin:"20px" , paddingLeft:"23px"}}>{selectedDate ? selectedDate.format('YYYY-MM-DD') : 'No date selected'}</h4>
-   <div style={{ display:"flex" , flexDirection:"column" ,maxHeight:'430px' , overflow:"auto"}} >
+    <div className='button-part'>
+   <h4 className='button-header'>{selectedDate ? selectedDate.format('YYYY-MM-DD') : 'No date selected'}</h4>
+   <div  className='button-format'>
                     {timeSlots?.map((time,index)=>(
-                        <Button  onClick={handleSubmit} key={index} style={{margin:"10px" , padding:"30px 40px 30px 40px"  }}>{time}</Button>
+                        <Button className='button-style' onClick={handleSubmit} key={index}>{time}</Button>
                     ))}
                 </div>
 
@@ -47,3 +48,15 @@ function handleSubmit() {
    
   )
 }
+
+
+{/* <div style={{padding:"20px"}}>
+   <h4 style={{margin:"20px" , paddingLeft:"23px"}}>{selectedDate ? selectedDate.format('YYYY-MM-DD') : 'No date selected'}</h4>
+   <div style={{ display:"flex" , flexDirection:"column" ,maxHeight:'430px' , overflow:"auto"}} >
+                    {timeSlots?.map((time,index)=>(
+                        <Button  onClick={handleSubmit} key={index} style={{margin:"10px" , padding:"30px 40px 30px 40px"  }}>{time}</Button>
+                    ))}
+                </div>
+
+    </div> */}
+   

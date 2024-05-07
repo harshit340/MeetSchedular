@@ -38,7 +38,7 @@ export default function Schedule(){
 
 
            <div className='user-info'>
-            <p style={{fontWeight:"600", fontSize:"20px" ,padding:"10px"}}>Enter Details</p>
+            <h5 style={{fontWeight:"600", fontSize:"20px" ,padding:"10px"}}>Enter Details</h5>
             <Form name="trigger" style={{ maxWidth: 600 }} layout="vertical" autoComplete="off">
             <div style={{padding:"10px"}}>
             <Form.Item  name="Name" label="Name" rules={[{ required: true, message: 'Please input!' }]}>

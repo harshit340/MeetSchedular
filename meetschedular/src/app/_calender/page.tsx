@@ -36,10 +36,10 @@ export default function Calender({ onDateSelected }: CalenderProps) {
         <>  
            { selectedDate?<>
            <div className='layout-time'>
-           <div className='calender-part'>
-            <h2 style={{padding:"20px"}}>Select date and time</h2>
-            <Calendar className='calender-style' fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/>
-            <div style={{padding:"20px"}}>
+           <div className='calender-part-button'>
+            <h2 >Select date and time</h2>
+            <Calendar className='calender-part-style' fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/>
+            <div >
                 <h3>Time Zone</h3>
                 <h5 style={{fontSize:"14px" , fontWeight:300}}>Indian Standard Time (4:55)</h5>
             </div>
@@ -51,9 +51,9 @@ export default function Calender({ onDateSelected }: CalenderProps) {
            </>
            :<>
          <div className='calender-part'>
-            <h2 style={{padding:"20px"}}>Select date and time</h2>
+            <h2 >Select date and time</h2>
            <Calendar className='calender-style' fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/>
-            <div style={{padding:"20px"}}>
+            <div >
                 <h3>Time Zone</h3>
                 <h5 style={{fontSize:"14px" , fontWeight:300}}>Indian Standard Time (4:55)</h5>
             </div>

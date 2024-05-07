@@ -1,0 +1,29 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+.button-header{
+    text-align: center;
+}
+
+.button-format{
+    display: flex;
+    flex-direction: column;
+    max-height: 430px;
+    overflow: auto;
+}
+
+.button-style{
+    margin:10px ;
+     padding:30px 40px 30px 40px;
+}
+
+@media (max-width:770px){
+    .button-format{
+        flex-direction: row;
+        max-width:500px;
+    }
+}
+

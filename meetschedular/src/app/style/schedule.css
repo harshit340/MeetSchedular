@@ -30,7 +30,7 @@
     justify-content: center;
 }
 
-@media (max-width:660px){
+@media (max-width:782px){
     .main-content{
         flex-direction: column;
     }

@@ -16,24 +16,11 @@
 
 .layout-time{
     display: flex;
+    border-left:1px solid rgb(206, 204, 204);
+    padding-left:10px;
 }
 
-@media (max-width:768px){
-    .layout-time{
-        flex-direction: column;
-    }
-    .calender-part{
-        border:none;
-        margin:auto;
-        padding:none;
-        
-    }
-    .calender-style{
-        width:250px;
-    }
 
-    
-}
 @media (max-width:900px){
     .calender-style{
         width:300px
@@ -42,4 +29,56 @@
         align-items: center;
     }
     
+}
+
+@media (max-width:770px){
+    .calender-part{
+        padding-top:20px;
+        border:none;
+        width:200px;
+    
+    }
+    .calender-style{
+        width:200px;
+        padding:none;
+    }
+    
+    
+}
+@media (max-width:768px){
+    .calender-part{
+        padding-top:20px;
+        border:none;
+        width:200px;
+    
+    }
+    .calender-style{
+        width:150px;
+        
+        padding:none;
+    }
+    .layout-time{
+        border:none;
+    }
+    
+}
+
+.calender-part-style{
+ width:500px;
+
+}
+
+@media (max-width:1107px){
+    .calender-part-style{
+        width:250px;
+    }
+    
+}
+
+
+@media (max-width:770px){
+    .layout-time{
+        display: flex;
+        flex-direction: column;
+    }
 }
