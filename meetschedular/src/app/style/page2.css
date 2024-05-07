@@ -4,37 +4,36 @@
     box-sizing: border-box;
 }
 
-.basic-layout{
+.card-layout{
     max-width: 75%;
     margin:auto;
-    margin-top:10px;
     border-radius: 10px;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
-}
-@media (max-width:1180px){
-    .basic-layout{
-        max-width: 45%;
-        
-    }
+    height:650px;
+    padding: 20px;
 }
 
 .main-content{
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    padding-right: 10px;
 }
-
-@media (max-width:1180px){
-    .main-content{
-        flex-direction: column;
-        padding-top:10px;
-    }
-    .other-part{
-        padding-top:20px;
-    }
-}
-
 
 .content-part{
-    margin-top:10%;
+    margin-top:20px;
+}
+
+@media (max-width:768px){
+    .card-layout{
+        max-width: 45%;
+        height: 800px ;
+        margin:auto;
+        
+    }
+
+    
+    .main-content{
+        flex-direction: column;
+        font-size: 10px;
+       
+    }
 }

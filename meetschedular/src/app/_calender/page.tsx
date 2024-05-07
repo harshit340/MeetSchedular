@@ -31,19 +31,14 @@ export default function Calender({ onDateSelected }: CalenderProps) {
       
       
         const { token } = theme.useToken();
-      
-        const wrapperStyle: React.CSSProperties = {
-          width: 500,
-          border: `1px solid ${token.colorBorderSecondary}`,
-          borderRadius: token.borderRadiusLG,
-        };
+    
     return (
         <>  
            { selectedDate?<>
-           <div style={{display:"flex"}}>
+           <div className='layout-time'>
            <div className='calender-part'>
             <h2 style={{padding:"20px"}}>Select date and time</h2>
-            <div style={wrapperStyle}><Calendar fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/></div>
+            <Calendar className='calender-style' fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/>
             <div style={{padding:"20px"}}>
                 <h3>Time Zone</h3>
                 <h5 style={{fontSize:"14px" , fontWeight:300}}>Indian Standard Time (4:55)</h5>
@@ -57,7 +52,7 @@ export default function Calender({ onDateSelected }: CalenderProps) {
            :<>
          <div className='calender-part'>
             <h2 style={{padding:"20px"}}>Select date and time</h2>
-            <div style={wrapperStyle} className='calender-style'><Calendar fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/></div>
+           <Calendar className='calender-style' fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/>
             <div style={{padding:"20px"}}>
                 <h3>Time Zone</h3>
                 <h5 style={{fontSize:"14px" , fontWeight:300}}>Indian Standard Time (4:55)</h5>

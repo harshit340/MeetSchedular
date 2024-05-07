@@ -1,16 +1,45 @@
-/* *{
+*{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
 
-@media (max-width:1180px){
-    .calender-part{
-        border-left:100px solid rgb(206, 204, 204);;
-    }
-}
 
 .calender-part{
     border-left:1px solid rgb(206, 204, 204);
     padding:10px;
-} */
+}
+
+.calender-style{
+    width:500px;
+}
+
+.layout-time{
+    display: flex;
+}
+
+@media (max-width:768px){
+    .layout-time{
+        flex-direction: column;
+    }
+    .calender-part{
+        border:none;
+        margin:auto;
+        padding:none;
+        
+    }
+    .calender-style{
+        width:250px;
+    }
+
+    
+}
+@media (max-width:900px){
+    .calender-style{
+        width:300px
+    }
+    .calender-part h2 {
+        align-items: center;
+    }
+    
+}
