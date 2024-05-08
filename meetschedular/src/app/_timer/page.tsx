@@ -2,11 +2,10 @@ import { Button } from 'antd';
 import React from 'react';
 import moment, { duration } from 'moment'; 
 import { useRouter } from "next/navigation"
-import { MdVisibility } from 'react-icons/md';
 import "../style/timer.css"
 import UserContext from '@/context/UserContext';
 interface TimerProps {
-  selectedDate: moment.Moment | null; // assuming selectedDate is a moment object
+  selectedDate: moment.Moment | null; 
 }
 
 export default function Timer({selectedDate}:TimerProps) {
