@@ -5,7 +5,7 @@ import UserContext from "./UserContext";
 const UserContextProvider = ({ children}) => {
   const [user, setuser] = useState();
 
-  // Function to update user state and save to local storage
+  
   const setUserData = (userData) => {
     setuser(userData);
     if (typeof window !== "undefined") {
@@ -13,7 +13,7 @@ const UserContextProvider = ({ children}) => {
     }
   };
 
-  // Effect to load user data from local storage on component mount
+ 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedUser = localStorage.getItem("user");
@@ -23,7 +23,7 @@ const UserContextProvider = ({ children}) => {
     }
   }, []);
 
-  // Provide setUserData through context so it's used instead of setuser
+  
   const value = { user, setuser: setUserData };
 
   return (

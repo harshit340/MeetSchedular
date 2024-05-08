@@ -8,10 +8,10 @@ import { FaRegClock } from "react-icons/fa";
 import { BsCameraVideo } from "react-icons/bs";
 import Calender from '../_calender/page';
 import UserContext from '@/context/UserContext';
-
+ 
 
 export default function Page2() {
-   
+
   const router = useRouter()
   const {user} = useContext(UserContext)
   

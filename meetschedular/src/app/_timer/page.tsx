@@ -1,26 +1,33 @@
 import { Button } from 'antd';
 import React from 'react';
+import moment, { duration } from 'moment'; 
 import { useRouter } from "next/navigation"
 import { MdVisibility } from 'react-icons/md';
 import "../style/timer.css"
+import UserContext from '@/context/UserContext';
+interface TimerProps {
+  selectedDate: moment.Moment | null; // assuming selectedDate is a moment object
+}
 
-export default function Timer({selectedDate}) {
+export default function Timer({selectedDate}:TimerProps) {
   const [timeSlots,setTimeSlots]=React.useState([]);
-  
+  const {user} = React.useContext(UserContext)
+
   React.useEffect(() => {
-    if (selectedDate) {
-      createTimeSlot(30); // You might pass the interval dynamically or keep it fixed
+    if (selectedDate && user?.duration) {
+      createTimeSlot(user.duration); 
     }
-  }, [selectedDate]);
+  }, [selectedDate, user?.duration]);
+  
   const createTimeSlot=(interval:number)=>{
-    const startTime = 8 * 60; // 8 AM in minutes
-    const endTime = 22 * 60; // 10 PM in minutes
+    const startTime = 8 * 60; 
+    const endTime = 22 * 60; 
     const totalSlots = (endTime - startTime) / interval;
-    const slots = Array.from({ length: totalSlots }, (_, i) => {
+    const slots:string[] = Array.from({ length: totalSlots }, (_, i) => {
   const totalMinutes = startTime + i * interval;
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
-  const formattedHours = hours > 12 ? hours - 12 : hours; // Convert to 12-hour format
+  const formattedHours = hours > 12 ? hours - 12 : hours; 
   const period = hours >= 12 ? 'PM' : 'AM';
   return `${String(formattedHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${period}`;
 });
@@ -50,13 +57,3 @@ function handleSubmit() {
 }
 
 
-{/* <div style={{padding:"20px"}}>
-   <h4 style={{margin:"20px" , paddingLeft:"23px"}}>{selectedDate ? selectedDate.format('YYYY-MM-DD') : 'No date selected'}</h4>
-   <div style={{ display:"flex" , flexDirection:"column" ,maxHeight:'430px' , overflow:"auto"}} >
-                    {timeSlots?.map((time,index)=>(
-                        <Button  onClick={handleSubmit} key={index} style={{margin:"10px" , padding:"30px 40px 30px 40px"  }}>{time}</Button>
-                    ))}
-                </div>
-
-    </div> */}
-   
