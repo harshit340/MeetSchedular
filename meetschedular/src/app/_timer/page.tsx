@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button ,Col} from 'antd';
 import React from 'react';
 import moment, { duration } from 'moment'; 
 import { useRouter } from "next/navigation"
@@ -41,7 +41,34 @@ function handleSubmit() {
 
 
   return (
-    
+   <>
+   <Col style={{textAlign:"center"}}>
+   <h4>{selectedDate ? selectedDate.format('YYYY-MM-DD') : 'No date selected'}</h4></Col>
+   <Col className='button-format' xs={24} sm={24} md={24} lg={24} xl={24}>
+   {timeSlots?.map((time,index)=>(
+                       
+                        <Button className='button-style' onClick={handleSubmit} key={index}>{time}</Button>
+                    ))}
+  </Col>
+   
+   </>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*   
     <div className='button-part'>
    <h4 className='button-header'>{selectedDate ? selectedDate.format('YYYY-MM-DD') : 'No date selected'}</h4>
    <div  className='button-format'>
@@ -50,9 +77,4 @@ function handleSubmit() {
                     ))}
                 </div>
 
-    </div>
-   
-  )
-}
-
-
+    </div> */
