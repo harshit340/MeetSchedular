@@ -35,18 +35,17 @@ export default function Calender({ onDateSelected }: CalenderProps) {
     return (
    <>
    {selectedDate?<>
-   <Row gutter={[16,16]}>
-    <Col  xs={24} sm={24} md={24} lg={24} xl={12} >
-     <h2 >Select date and time</h2>
-     <Calendar  fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect}/>
-     <h3>Time Zone</h3>
-     <h5 style={{fontSize:"14px" , fontWeight:300}}>Indian Standard Time (4:55)</h5>
-     </Col>
-     <Col xs={24} sm={24} md={24} lg={24} xl={12}>
-     <Timer selectedDate={selectedDate}/>
-     </Col>
-     </Row>
-   
+    <Col style={{display:"flex", paddingRight:"20px"}} className='button-align border-style'>
+  <Col  >
+    <h2>Select date and time</h2>
+    <Calendar fullscreen={false} onPanelChange={onPanelChange} onSelect={onSelect} />
+    <h3>Time Zone</h3>
+    <h5 style={{ fontSize: "14px", fontWeight: 300 }}>Indian Standard Time (4:55)</h5>
+  </Col>
+  <Col  >
+    <Timer selectedDate={selectedDate} />
+  </Col>
+</Col>
    </>
     :
     <> 

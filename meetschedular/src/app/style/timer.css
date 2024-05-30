@@ -26,10 +26,5 @@
         max-width:500px;
     }
 }
-@media (max-width:1024px){
-    .button-format{
-        flex-direction: row;
-        max-width:500px;
-    }
-}
+
 
